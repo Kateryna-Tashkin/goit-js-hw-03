@@ -4,8 +4,16 @@ const products = [
   { name: 'Дроид', price: 400, quantity: 7 },
   { name: 'Захват', price: 1200, quantity: 2 },
 ];
-
-const getAllPropValues = function (arr, prop) {};
+const getAllPropValues = function (arr, prop) {
+  const newArray = [];
+  let product = 0;
+  for (product of products) {
+    if (prop in product) {
+      newArray.push(product[prop]);
+    }
+  }
+  return newArray;
+};
 
 /*
  * Вызовы функции для проверки работоспособности твоей реализации.

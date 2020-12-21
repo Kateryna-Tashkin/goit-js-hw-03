@@ -1,20 +1,14 @@
-let names = 0;
-let value = 0;
 const findBestEmployee = function (employees) {
-  value = Object.values(employees);
-  //console.log(employee);
-  const max = Math.max(...value);
-  names = Object.keys(employees);
-  //console.log(names);
-  return max;
+  let count = 0;
+  let bestEmployee = '';
+  for (const key in employees) {
+    if (count < employees[key]) {
+      count = employees[key];
+      bestEmployee = key;
+    }
+  }
+  return bestEmployee;
 };
-// const findBestEmployee = function (employees) {
-//   for (const key in employees) {
-//     console.log(key);
-//     value = Object.values(employees);
-//     const max = Math.max(...value);
-//   }
-// };
 
 /*
  * Вызовы функции для проверки работоспособности твоей реализации.
